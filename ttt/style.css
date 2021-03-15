@@ -1,0 +1,54 @@
+* {
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 610px;
+    height: 610px;
+    background-color: black;
+    margin: 0 auto;
+}
+
+.grid div {
+    width: 200px;
+    height: 200px;
+    background-color: white;
+    margin-bottom: 5px;
+}
+
+.grid div:hover {
+    background-color: yellow;
+}
+
+.playerX {
+    background-image: url("cross.png");
+}
+
+.playerO {
+    background-image: url("circle.png");
+}
+
+#resetBtn {
+    color: red;
+    background-color: orange;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 100px;
+    height: 50px;
+}
+
+#resetBtn:hover {
+    background-color: white;
+    transition: 0.5s ease-in-out;
+}
+
+.messagePara {
+    color: white;
+    transform: translate(300px, 20px);
+}
