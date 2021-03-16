@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             para.textContent = 'Resetting the game! Wait for the message to disappear';
             setTimeout(() => {
                 para.textContent = '';
-            }, 1000);
-        }, 0);
+            }, 500);
+        }, 500);
     }
 
     function horizontalCheck(choices) {
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const choices = [[...dummy.slice(0, 3)], [...dummy.slice(3, 6)], [...dummy.slice(6, 9)]];
         
         horizontalCheck(choices);
-        
+    
         // vertical checkinng
         const vchoices = [...choices];
         const [frow, srow, trow] = vchoices;
@@ -119,3 +119,4 @@ document.addEventListener('DOMContentLoaded', () => {
         diagonalCheck(diagonalChoices); 
     }
 })
+
