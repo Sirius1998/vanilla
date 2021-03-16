@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', () => {
             para.textContent = 'Resetting the game! Wait for the message to disappear';
             setTimeout(() => {
                 para.textContent = '';
-            }, 3000);
-        }, 1000);
+            }, 1000);
+        }, 0);
     }
 
     function horizontalCheck(choices) {
@@ -32,14 +32,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 para.textContent = 'Player X won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
             let resultY = row.every(e => e === 'playerO');
             if (resultY) {
                 para.textContent = 'Player O won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
         });
     }
@@ -51,54 +51,36 @@ document.addEventListener('DOMContentLoaded', () => {
                 para.textContent = 'Player X won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
             let resultY = row.every(e => e === 'playerO');
             if (resultY) {
                 para.textContent = 'Player O won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
         });
         
     }
 
-    function diagonalCheck(one, two) {
-        one.forEach(row => {
+    function diagonalCheck(choices) {
+        choices.forEach(row => {
             let resultX = row.every(e => e === 'playerX');
             if (resultX) {
                 para.textContent = 'Player X won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
             let resultY = row.every(e => e === 'playerO');
             if (resultY) {
                 para.textContent = 'Player O won the game!';
                 setTimeout(() => {
                     resetgame();
-                }, 3000);
+                }, 2000);
             }
         });
-
-        two.forEach(row => {
-            let resultX = row.every(e => e === 'playerX');
-            if (resultX) {
-                para.textContent = 'Player X won the game!';
-                setTimeout(() => {
-                    resetgame();
-                }, 3000);
-            }
-            let resultY = row.every(e => e === 'playerO');
-            if (resultY) {
-                para.textContent = 'Player O won the game!';
-                setTimeout(() => {
-                    resetgame();
-                }, 3000);
-            }
-        });
-        
     }
 
     function clickOutcome(e) {
@@ -132,9 +114,8 @@ document.addEventListener('DOMContentLoaded', () => {
         verticalCheck(modifiedChoices);
 
         // diangonal chekcing
-        const diagonalChoices1 = [[frow1, srow2, trow3]];
-        const diagonalChoices2 = [[trow1, srow2, frow3]];
+        const diagonalChoices = [[frow1, srow2, trow3], [trow1, srow2, frow3]];
 
-        diagonalCheck(diagonalChoices1, diagonalChoices2); 
+        diagonalCheck(diagonalChoices); 
     }
 })
